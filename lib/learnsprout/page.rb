@@ -9,6 +9,10 @@ module LearnSprout
       @items = []
       @type = type
       @extras = extras
+      puts "EXTRAS"
+      puts @extras
+      @client = @extras['client'] if @extras.has_key?('client')
+
       data = get(url)
 
       @nextUrl = data["next"].to_s
@@ -21,7 +25,9 @@ module LearnSprout
       #TODO handle non-page URL?
       if data['data']
         data['data'].each do |item|
-          @items << type.new(item.merge(extras))
+          new_item = type.new(item.merge(extras))
+          new_item['client'] = @client
+          @items << new_item
         end
       end
     end
