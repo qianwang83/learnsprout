@@ -131,8 +131,6 @@ module LearnSprout
         org_instances = []
         orgs.each do |org|
           org["client"] = self
-          puts "SETTING UP CLINET"
-          puts org.client
           org_instances << Org.new(org)
         end
         return org_instances
