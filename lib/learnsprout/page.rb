@@ -21,6 +21,8 @@ module LearnSprout
       #TODO handle non-page URL?
       if data['data']
         data['data'].each do |item|
+          puts item
+          puts extras
           @items << type.new(item.merge(extras))
         end
       end
