@@ -17,7 +17,7 @@ module LearnSprout
       if @nextUrl[0, prefix.length] == prefix
         @nextUrl = @nextUrl[prefix.length, @nextUrl.length - prefix.length]
       end
-
+      puts "initialze"
       #TODO handle non-page URL?
       if data['data']
         data['data'].each do |item|
