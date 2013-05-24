@@ -18,6 +18,8 @@ module LearnSprout
         @nextUrl = @nextUrl[prefix.length, @nextUrl.length - prefix.length]
       end
       puts "initialze"
+      puts data.keys
+      puts data['data']
       #TODO handle non-page URL?
       if data['data']
         data['data'].each do |item|
