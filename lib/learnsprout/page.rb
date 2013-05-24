@@ -10,8 +10,6 @@ module LearnSprout
       @type = type
       @extras = extras
       data = get(url)
-      puts "type #{type}"
-      puts extras
 
       @nextUrl = data["next"].to_s
       # Remove base URL if it's included
@@ -19,9 +17,6 @@ module LearnSprout
       if @nextUrl[0, prefix.length] == prefix
         @nextUrl = @nextUrl[prefix.length, @nextUrl.length - prefix.length]
       end
-      puts "initialze"
-      puts data.keys
-      puts data['data']
       #TODO handle non-page URL?
       if data['data']
         data['data'].each do |item|

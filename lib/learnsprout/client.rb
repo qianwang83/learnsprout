@@ -26,7 +26,7 @@ module LearnSprout
 
     def schools(org_id)
       schools = get("org/#{org_id}/school?apikey=#{@api_key}")
-      Page.new("org/#{org_id}/school?apikey=#{@api_key}", School, :client => self, :org_id => org_id)
+      Page.new("org/#{org_id}/school?apikey=#{@api_key}", School, {'client' => self, 'org_id' => org_id})
     end
 
     def student(org_id, student_id)
@@ -37,13 +37,13 @@ module LearnSprout
     end
 
     def students(org_id, options = {})
-      school_id = options[:school_id]
+      school_id = options["school_id"]
       if (school_id)
         url = "org/#{org_id}/school/#{school_id}/student?apikey=#{@api_key}"
       else
         url = "org/#{org_id}/student?apikey=#{@api_key}"
       end
-      Page.new(url, Student, :org_id => org_id, :client => self)
+      Page.new(url, Student, {'org_id' => org_id, 'client' => self})
     end
 
     def section(org_id, section_id)
@@ -55,13 +55,13 @@ module LearnSprout
     end
 
     def sections(org_id, options = {})
-      school_id = options[:school_id]
+      school_id = options["school_id"]
       if (school_id)
         url = "org/#{org_id}/school/#{school_id}/section?apikey=#{@api_key}"
       else
         url = "org/#{org_id}/section?apikey=#{@api_key}"
       end
-      Page.new(url, Section, :org_id => org_id, :client => self)
+      Page.new(url, Section, {'org_id' => org_id, 'client' => self})
     end
 
     def teacher(org_id, teacher_id)
@@ -73,13 +73,13 @@ module LearnSprout
     end
 
     def teachers(org_id, options = {})
-      school_id = options[:school_id]
+      school_id = options["school_id"]
       if (school_id)
         url = "org/#{org_id}/school/#{school_id}/teacher?apikey=#{@api_key}"
       else
         url = "org/#{org_id}/teacher?apikey=#{@api_key}"
       end
-      Page.new(url, Teacher, :org_id => org_id, :client => self)
+      Page.new(url, Teacher, {'org_id' => org_id, 'client' => self})
     end
 
     def term(org_id, term_id)
@@ -91,13 +91,13 @@ module LearnSprout
     end
 
     def terms(org_id, options = {})
-      school_id = options[:school_id]
+      school_id = options["school_id"]
       if (school_id)
         url = "org/#{org_id}/school/#{school_id}/term?apikey=#{@api_key}"
       else
         url = "org/#{org_id}/term?apikey=#{@api_key}"
       end
-      Page.new(url, Term, :org_id => org_id, :client => self)
+      Page.new(url, Term, {'org_id' => org_id, 'client' => self})
     end
 
     def current_term(org_id, school_id)
@@ -117,13 +117,13 @@ module LearnSprout
     end
 
     def courses(org_id, options = {})
-      school_id = options[:school_id]
+      school_id = options["school_id"]
       if (school_id)
         url = "org/#{org_id}/school/#{school_id}/course?apikey=#{@api_key}"
       else
         url = "org/#{org_id}/course?apikey=#{@api_key}"
       end
-      Page.new(url, Course, :org_id => org_id, :client => self)
+      Page.new(url, Course, {'org_id' => org_id, 'client' => self})
     end
 
     private

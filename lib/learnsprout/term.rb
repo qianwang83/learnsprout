@@ -38,7 +38,7 @@ module LearnSprout
       return @sections if @sections
       return [] if @section_ids.empty?
       @sections = []
-      @client.sections(@org_id, school_id: @school_id).each do |section|
+      @client.sections(@org_id, {"school_id" => @school_id}).each do |section|
         @sections.push section if @section_ids.include?(section.id)
       end
       return @sections

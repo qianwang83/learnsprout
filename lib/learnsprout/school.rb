@@ -30,7 +30,7 @@ module LearnSprout
     end
 
     def students
-      @client.students(@org_id, :school_id => @school_id)
+      @client.students(@org_id, {"school_id" => @school_id})
     end
 
     def section(section_id)
@@ -38,7 +38,7 @@ module LearnSprout
     end
 
     def sections
-      @client.sections(@org_id, :school_id => @school_id)
+      @client.sections(@org_id, {"school_id" => @school_id})
     end
 
     def teacher(teacher_id)
@@ -46,7 +46,7 @@ module LearnSprout
     end
 
     def teachers
-      @client.teachers(@org_id, :school_id => @school_id)
+      @client.teachers(@org_id, {"school_id" => @school_id})
     end
 
     def term(term_id)
@@ -54,7 +54,7 @@ module LearnSprout
     end
 
     def terms
-      @client.terms(@org_id, :school_id => @school_id)
+      @client.terms(@org_id, {"school_id" => @school_id})
     end
 
     def current_term
@@ -66,7 +66,7 @@ module LearnSprout
     end
 
     def courses
-      @client.courses(@org_id, :school_id => @school_id)
+      @client.courses(@org_id, {"school_id" => @school_id})
     end
   end
-end 
+end
