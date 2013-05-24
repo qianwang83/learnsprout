@@ -10,6 +10,8 @@ module LearnSprout
       @type = type
       @extras = extras
       data = get(url)
+      puts "type #{type}"
+      puts extras
 
       @nextUrl = data["next"].to_s
       # Remove base URL if it's included
@@ -25,6 +27,7 @@ module LearnSprout
         data['data'].each do |item|
           puts item
           puts extras
+          puts "in loop"
           @items << type.new(item.merge(extras))
         end
       end
