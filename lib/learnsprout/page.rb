@@ -20,9 +20,6 @@ module LearnSprout
       #TODO handle non-page URL?
       if data['data']
         data['data'].each do |item|
-          puts item
-          puts extras
-          puts "in loop"
           @items << type.new(item.merge(extras))
         end
       end
