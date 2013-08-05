@@ -36,8 +36,6 @@ module LearnSprout
       @gender = attrs["gender"]
       @exit_date = attrs["exit_date"] && Date.parse(attrs["exit_date"])
       @entry_date = attrs["entry_date"] && Date.parse(attrs["entry_date"])
-      puts "here"
-      puts "extras #{attrs['extras']}"
       @enroll_status = attrs["extras"]["enroll_status"]
     end
   end
